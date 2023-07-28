@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subir multiples imagenes con PHP</title>
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename ='imgs/favicon.ico')}}"
+      type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/file.css') }}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content_home">
+        <h2 class="content-title text-center">
+          Domina la carga de múltiples imágenes con Python 🐍 Guia completa
+          <hr />
+        </h2>
+
+        <form
+          name="mi_form"
+          class="mb-5"
+          action="process_images.php"
+          method="POST"
+          enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="archivo" class="form-label">
+                Seleccione la imagen
+                <strong>(Formatos permitidos JPG, PNG máximo 8 MB)</strong>
+              </label>
+              <div id="fileInputs">
+                <button class="btn btn-info" style="font-size: 18px">
+                  <i class="bi bi-cloud-upload" style="padding: 0px 10px"></i>
+                  Subir archivo
+                </button>
+                <input type="file" name="archivo_0" accept="image/*" />
+              </div>
+            </div>
+
+            <div class="col-md-9 mb-3 grid_imgs">
+              <output></output>
+              <div
+                style="display: none"
+                class="mensaje alert alert-danger text-center mt-2"
+                role="alert"
+                style="display: none"></div>
+            </div>
+          </div>
+
+          <div class="col-md-8 mb-3">
+            <button type="submit" name="submit" class="button">
+              Cargar Imagenes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/process_form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/process_file.js') }}"></script>
+  </body>
+</html>

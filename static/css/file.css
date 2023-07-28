@@ -1,0 +1,59 @@
+output {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  border-radius: 5px;
+}
+output .image {
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+output .image img {
+  height: 100%;
+  width: 100%;
+}
+
+output .image span {
+  background: gray;
+  border-radius: 50%;
+  top: 10px;
+  position: absolute;
+  right: 4px;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+}
+output .image span:hover {
+  background-color: #f1abb1;
+  color: #333;
+}
+.bi-x {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 3px 4px;
+}
+#fileInputs {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#fileInputs input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#fileInputs:hover {
+  cursor: pointer;
+}
