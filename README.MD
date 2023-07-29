@@ -1,31 +1,41 @@
-### Lo primero seria crear tu entorno virtual, ejecutarndo
+### Domina la carga de multiples imagenes con Python 🐍 Guia completa
+
+###### Primero crea tu entorno virtual, instala
+
+`pip install virtualenv` con el fin de poder crear entornos virtuales con dicho paquete.
+
+###### Creando mi entorno virtual
 
 `virtualenv env`
 
-### Activas tu entorno virtual
+#### Activando mi entorno virtual
 
 `. env/Scripts/activate`
 
-### Luego instalas el Framework de Flask
+#### Luego instalas el Framework de Flask
 
 `pip instal flask`
 
-### Ahora solo entras a la carpeta app asi:
-
-`cd app/`
+#### Instalando driver para conectar Python y MySQL
 
 `pip install mysql-connector-python`
 
-# IMPORTANTE, para correr el proyecto solo debes ejecutar el archivo
-
-# requirements.txt con el comando;
+#### Instalar todos los paquetes necesarios del proyecto, solo ejecutando el archivo requirements.txt
 
 `pip install -r requirements.txt`
 
-### Ya solo queda ejecutar la aplicación
+#### Ya solo queda importar la base de datos en MySQL, cambiar los parametros de conexión a BD
 
-` python app.py`
+#### Ejecutar la Aplicación
 
-## Resultado
+` python run.py`
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/portada-estructura-proyecto-python-flask.PNG)
+## Resultado 😲
+
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/cargar_multiples_imagenes_python_urian_viera.PNG)
+
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/lista_de_album_urian_viera.PNG)
+
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/fotos_de_mi_album_urian_viera.PNG)
+
+Gracias, no olvides suscribirte al canal de Youtube 🙏 😀

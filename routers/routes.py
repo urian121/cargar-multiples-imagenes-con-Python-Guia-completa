@@ -18,7 +18,7 @@ def inicio():
 
 @app.route('/procesar-formulario-album', methods=['POST'])
 def processForm():
-    print(f"Data request: {request.form}")
+    # print(f"Data request: {request.form}")
     album_foto = request.form['album_foto']
     if request.files:
         file = request.files
@@ -37,7 +37,6 @@ def lista_album():
 # Ver fotos del Album seleccionado
 @app.route('/ver-album/<string:id_album>', methods=['GET'])
 def verAlbunBD(id_album):
-    print(detalles_album(id_album))
     return render_template('fotos_album.html', fotos_album=detalles_album(id_album))
 
 
