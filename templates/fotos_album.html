@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Fotos</title>
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename ='imgs/favicon.ico')}}"
+      type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/fotos.css') }}" />
+    <style>
+      body {
+        background-color: #f1f4ff !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section__masonry">
+      {% if fotos_album %}
+      <div class="section__masonry-wrapper">
+        {% set urlFile = '../static/' %}
+        <!---->
+        {% for foto in fotos_album %}
+        <div class="section__masonry-wrapper__item">
+          <img
+            style="box-shadow: 0px 17px 26px -8px rgba(151, 172, 193, 0.6)"
+            src="{{ urlFile }}{{foto.url_foto}}"
+            alt="{{foto.name_foto}}"
+            class="section__masonry-wrapper__item-img" />
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>No se encontraron fotos para este álbum.</p>
+      {% endif %}
+    </section>
+  </body>
+</html>

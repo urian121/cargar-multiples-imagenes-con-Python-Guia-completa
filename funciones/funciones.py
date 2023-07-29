@@ -3,7 +3,6 @@ import os
 # Para subir archivo tipo foto al servidor
 from werkzeug.utils import secure_filename
 import uuid  # Modulo de python para crear un string
-from os import path  # Modulo para obtener la ruta o directorio
 
 
 from configBD.connBD import connectionBD  # Conexión a BD

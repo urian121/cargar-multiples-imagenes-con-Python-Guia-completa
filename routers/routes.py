@@ -5,6 +5,7 @@ from flask import render_template, request, redirect, url_for, jsonify
 
 # Importando todas mis funciones
 from funciones.funciones import *
+from funciones.fotos_album import *
 
 
 # Definiendo un decorador
@@ -26,6 +27,18 @@ def processForm():
             return jsonify({'status_server': 1, 'mensaje': 'El Album fue creado correctamente.', 'status_mensaje': 'success'})
         else:
             return jsonify({'status_server': 0, 'mensaje': 'Ocurrio un error al crear el Album', 'status_mensaje': 'error'})
+
+
+@app.route('/lista-de-album', methods=['GET'])
+def lista_album():
+    return render_template('lista_album.html', lista_album=lista_albumBD())
+
+
+# Ver fotos del Album seleccionado
+@app.route('/ver-album/<string:id_album>', methods=['GET'])
+def verAlbunBD(id_album):
+    print(detalles_album(id_album))
+    return render_template('fotos_album.html', fotos_album=detalles_album(id_album))
 
 
 @app.errorhandler(404)
