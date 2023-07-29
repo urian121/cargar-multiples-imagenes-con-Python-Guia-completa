@@ -1,14 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;900");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .wrapper {
   min-height: 100vh;
-  min-width: 100vw;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -20,7 +12,7 @@
     margin: 0 auto;
     padding: 13px 26px;
     line-height: 20px;
-    background: #3863fc;
+    background: #2b97ad;
     color: #ffffff;
     border-radius: 50px;
     outline: none;
@@ -44,7 +36,6 @@
     .content-title {
       color: #555;
       margin-bottom: 30px;
-      line-height: 25px;
       font-weight: 700;
     }
   }
@@ -54,4 +45,32 @@
   background-color: #ededed !important;
   padding: 10px;
   border-radius: 5px;
+}
+
+/*Boton flotante */
+.botonFlotante {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: #21a8c3;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 36px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.3s;
+}
+span {
+  transition: 0.5s;
+}
+.botonFlotante:hover span {
+  transform: rotate(360deg);
+}
+.botonFlotante:active {
+  transform: scale(1.4);
 }

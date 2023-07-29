@@ -1,6 +1,6 @@
 let arrayImagen = [];
 let fileCounter = 1; // Nuevo contador para generar id y name
-const maxSizeInBytes = 10 * 1024 * 1024;
+const maxSizeInBytes = 2 * 1024 * 1024; //Maximo 2 MB
 const output = document.querySelector("output");
 const mensajeError = document.querySelector(".mensaje");
 
@@ -28,7 +28,7 @@ function manejarCambioArchivo(fileInput) {
     }
     if (file[0].size > maxSizeInBytes) {
       mensajeError.innerText =
-        "El tamaño máximo permitido para cada imagen es de 8 MB.";
+        "El tamaño máximo permitido para cada imagen es de 2 MB.";
       mensajeError.style.display = "block";
       return;
     }
@@ -102,6 +102,7 @@ function borrar_imagen(nombreImagen) {
 }
 
 function recalculateTotalFileSize() {
+  let btn_send = document.querySelector(".btn_send");
   let totalSize = 0;
   arrayImagen.forEach((image) => {
     totalSize += image.size;
@@ -110,10 +111,15 @@ function recalculateTotalFileSize() {
   const totalSizeInMB = totalSize / (1024 * 1024);
   if (totalSizeInMB > maxSizeInMB) {
     mensajeError.innerText =
-      "El tamaño total de las imágenes supera el límite de 8 MB.";
+      "El tamaño total de las imágenes supera el límite de 2 MB.";
     mensajeError.style.display = "block";
+    btn_send.style.backgroundColor = "#c1c1c1";
+
+    btn_send.disabled = true;
   } else {
     mensajeError.style.display = "none";
+    btn_send.style.backgroundColor = "";
+    btn_send.removeAttribute("disabled");
   }
 }
 
