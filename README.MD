@@ -2,10 +2,10 @@
 
 ###### Primero crea tu entorno virtual, instala
 
-`pip install virtualenv` con el fin de poder crear entornos virtuales con dicho paquete.
+`pip install virtualenv` con el fin de poder aislar toda la instalacion de los paquetes en un solo proyecto.
 
 ###### Creando mi entorno virtual
-
+`pip install virtualenv`
 `virtualenv env`
 
 #### Activando mi entorno virtual
