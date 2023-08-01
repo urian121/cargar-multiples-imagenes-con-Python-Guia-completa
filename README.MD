@@ -1,4 +1,4 @@
-### Domina la carga de multiples imagenes con Python 🐍 Guia completa
+### cargar múltiples imágenes con Python 🐍 Guía completa
 
 ###### Primero crea tu entorno virtual, instala
 
