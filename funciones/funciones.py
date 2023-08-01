@@ -37,40 +37,40 @@ def guardar_AlbumBD(album_foto):
     except Exception as e:
         return f'Error en la función guardar_AlbumBD: {str(e)}'
 
+
 # Guardar todas las imagenes asociadas al Album registrado
-
-
 def procesarFotos(files, result_process_album):
     try:
         # Definiendo un diccionario vacio
         nombres_archivos = []
+        # Iterando sobre el diccionario files,
+        # En cada iteración, se toma una clave (key) y su respectivo valor (file) del diccionario files.
         for key, file in files.items():
-            if key.startswith('archivo_'):
-                # Nombre original del archivo
-                filename = secure_filename(file.filename)
-                extension = os.path.splitext(filename)[1]
+            # Nombre original del archivo
+            filename = secure_filename(file.filename)
+            extension = os.path.splitext(filename)[1]
 
-                # Creando un string de 50 caracteres
-                nuevoNameFile = (uuid.uuid4().hex + uuid.uuid4().hex)[:100]
+            # Creando un string de 50 caracteres
+            nuevoNameFile = (uuid.uuid4().hex + uuid.uuid4().hex)[:100]
 
-                nombreFile = nuevoNameFile + extension
+            nombreFile = nuevoNameFile + extension
 
-                # Construir la ruta completa de subida del archivo
-                basepath = os.path.abspath(os.path.dirname(__file__))
-                upload_dir = os.path.join(
-                    basepath, f'../static/upload_fotos/album_{result_process_album}')
+            # Construir la ruta completa de subida del archivo
+            basepath = os.path.abspath(os.path.dirname(__file__))
+            upload_dir = os.path.join(
+                basepath, f'../static/upload_fotos/album_{result_process_album}')
 
-                # Validar si existe la ruta y crearla si no existe
-                if not os.path.exists(upload_dir):
-                    os.makedirs(upload_dir)
-                    # Dando permiso a la carpeta
-                    os.chmod(upload_dir, 0o755)
+            # Validar si existe la ruta y crearla si no existe
+            if not os.path.exists(upload_dir):
+                os.makedirs(upload_dir)
+                # Dando permiso a la carpeta
+                os.chmod(upload_dir, 0o755)
 
-                # Construir la ruta completa de subida del archivo
-                upload_path = os.path.join(upload_dir, nombreFile)
-                file.save(upload_path)
+            # Construir la ruta completa de subida del archivo
+            upload_path = os.path.join(upload_dir, nombreFile)
+            file.save(upload_path)
 
-                nombres_archivos.append(nombreFile)
+            nombres_archivos.append(nombreFile)
 
         # Retornando un diccionario con los nombres de cada foto recibida
         return nombres_archivos
