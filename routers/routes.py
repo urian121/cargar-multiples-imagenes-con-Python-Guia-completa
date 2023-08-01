@@ -9,7 +9,7 @@ from funciones.fotos_album import *
 
 
 # Definiendo un decorador
-@app.route('/')
+@app.route('/',  methods=['GET'])
 # Definiendo una función llamada inicio
 def inicio():
     # Retornando una vista sin parametros
